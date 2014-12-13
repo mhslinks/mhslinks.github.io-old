@@ -17,7 +17,7 @@ Generating the HTML
 ========
 
 Prerequisites:
-* [Python](https://www.python.org/downloads/) **2**
+* [Python](https://www.python.org/downloads/) **2** (Jinja2 does not fully support Python 3 at the moment, unfortunately)
 * [Jinja2](http://jinja.pocoo.org/)
 
 If you wish to install Jinja2 on your system, I would personally recommend you use `pip` ([installation instructions](https://pip.pypa.io/en/latest/installing.html)) to install. Run `pip install jinja2` and you should be set.
