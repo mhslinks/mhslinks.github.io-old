@@ -1,0 +1,55 @@
+<!-- generated on {{ timestamp }} -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	{% if tumblr %}
+	<title>{block:PostSummary}{PostSummary} — {/block:PostSummary}{Title}</title>
+	{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	{% else %}
+	<title>{% block title %}MHS Links{% endblock %}</title>
+	{% endif %}
+	<!--[if lte IE 8]>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.5.0/base-min.css&amp;pure/0.5.0/grids-min.css&amp;pure/0.5.0/grids-responsive-old-ie-min.css&amp;pure/0.5.0/buttons-min.css">
+	<![endif]-->
+	<!--[if gt IE 8]><!-->
+		<link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.5.0/base-min.css&amp;pure/0.5.0/grids-min.css&amp;pure/0.5.0/grids-responsive-min.css&amp;pure/0.5.0/buttons-min.css">
+	<!--<![endif]-->
+	{% if tumblr %}
+	<link rel="stylesheet" href="http://static.tumblr.com/heyvw1d/hxsnfu61t/mhslinks.css">
+	{% else %}
+	<link rel="stylesheet" href="/style/mhslinks.css">
+	{% endif %}
+</head>
+<body>
+	{% if tumblr %}
+	<style type="text/css">
+	#tumblr_controls 
+	{
+		display: none;
+	}
+	</style>
+	{% endif %}
+	<div class="outer">
+		<div class="middle">
+			{% block body %}
+			{block:Posts}{block:Text}
+			{Body}
+			{/block:Text}{/block:Posts}
+			{% endblock %}
+		</div>
+	</div>
+	<div id="floater" class="fade-in fade-one">
+		<div>Made by Michael Cui.</div>
+		<div>Not an official MHS website.</div>
+		{% if tumblr %}
+		<div><a href="http://mc.powered.technology/mhs">Unblocked mirror</a></div>
+		{% endif %}
+	</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% if not tumblr %}
+{% extends "base.tmpl" %}
+{% block title %}Emails{% endblock %}
+{% else %}
+<!-- generated on {{ timestamp }} -->
+{% endif %}
+{% block body %}
+<div class="inner emails-body fade-in fade-two">
+	<div><a class="pure-button button-xlarge button-red" href="{% if not tumblr %}..{% endif %}/"> &larr; back</a></div>
+	<h1>Staff Edumail Email Addresses</h1>
+	{% for update in emailupdates %}
+	<div><strong>{{ update.date|e }}</strong>: {{ update.message|e }}</div>
+	{% endfor %}
+	<div class="small"><span style="line-height: 1.4;">{{ needemails|e }}</span></div>
+	<br>
+	<div>Please note that not all teachers use/check their Edumail emails. This list is supplied as a reference, and not a replacement for not being bothered to ask your teacher what their email is.</div>
+	<br>
+	<div class="small">
+		{% for email in emails|sort(attribute="local") %}
+		<div><a href="mailto:{{ email.local }}@edumail.vic.gov.au">{{ email.local }}<span class="email">@edumail.vic.gov.au</span></a>{% if email.notes %} {{ email.notes|e }}{% endif %}</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
