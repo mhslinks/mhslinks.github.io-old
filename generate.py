@@ -28,8 +28,9 @@ for txt in txts:
 env = Environment(loader=FileSystemLoader('templates'), trim_blocks=True, lstrip_blocks=True)
 
 def generate_template(template_name, is_tumblr, destination):
-	# Please clean this oneliner up into something more readable, please.
-	open(destination, "w").write(env.get_template(template_name).render(tumblr=is_tumblr, **data).encode("utf-8"))
+	generated = env.get_template(template_name).render(tumblr=is_tumblr, **data)
+	with open(destination, "w") as to_write:
+		to_write.write(generated.encode("utf-8"))
 
 for template in env.list_templates():
 	# always generate a tumblr template for everything
