@@ -1,7 +1,6 @@
 import csv
 from jinja2 import Environment, FileSystemLoader
 import os
-from time import localtime, strftime
 import os.path
 get_path = lambda x: os.path.join(os.path.dirname(__file__), x)
 csv_location = get_path("data/csv")
@@ -11,7 +10,7 @@ txt_location = get_path("data/txt")
 # Loads data from /data/ to the variable "data".
 # CSVs get loaded as arrays of dicts, TXTs get loaded as strings.
 # "data" is initialised with a timestamp.
-data = {"timestamp": strftime("%a, %d %b %Y %H:%M:%S AEST", localtime())}
+data = {}
 
 
 for (dirpath, dirnames, filenames) in os.walk(csv_location):
