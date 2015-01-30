@@ -9,8 +9,9 @@ MHS Links is generated using a Python script using the [Jinja2](http://jinja.poc
 Live sites
 ========
 
-* http://mhslinks.tumblr.com/ (generated to `/generated/tumblr/`)
-* http://mc.powered.technology/mhs/ (generated to `/generated/standalone/`)
+* http://mhslinks.tumblr.com/ (generated to `/generated/tumblr/`) **The tumblr site will be deprecated soon** due to the difficulty in keeping it updated.
+* http://mc.powered.technology/mhslinks/ (generated to `/generated/standalone/`)
+* http://mcpower.github.io/mhslinks/ (using the same HTML as the above)
 
 
 Generating the HTML
