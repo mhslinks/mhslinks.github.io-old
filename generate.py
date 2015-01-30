@@ -1,6 +1,6 @@
 import csv
 from jinja2 import Environment, FileSystemLoader
-from os import walk
+import os
 from time import localtime, strftime
 import os.path
 get_path = lambda x: os.path.join(os.path.dirname(__file__), x)
@@ -14,10 +14,10 @@ txt_location = get_path("data/txt")
 data = {"timestamp": strftime("%a, %d %b %Y %H:%M:%S AEST", localtime())}
 
 
-for (dirpath, dirnames, filenames) in walk(csv_location):
+for (dirpath, dirnames, filenames) in os.walk(csv_location):
 	csvs = filenames
 	break
-for (dirpath, dirnames, filenames) in walk(txt_location):
+for (dirpath, dirnames, filenames) in os.walk(txt_location):
 	txts = filenames
 	break
 
@@ -30,7 +30,11 @@ env = Environment(loader=FileSystemLoader(get_path("templates")), trim_blocks=Tr
 
 def generate_template(template_name, is_tumblr, destination):
 	generated = env.get_template(template_name).render(tumblr=is_tumblr, **data)
-	with open(get_path(destination), "w") as to_write:
+	destination = get_path(destination)
+	dirname = os.path.dirname(destination)
+	if not os.path.exists(dirname):
+		os.makedirs(dirname)
+	with open(destination, "w") as to_write:
 		to_write.write(generated.encode("utf-8"))
 
 for template in env.list_templates():
