@@ -2,9 +2,10 @@ import csv
 from jinja2 import Environment, FileSystemLoader
 from os import walk
 from time import localtime, strftime
-
-csv_location = "data/csv"
-txt_location = "data/txt"
+import os.path
+get_path = lambda x: os.path.join(os.path.dirname(__file__), x)
+csv_location = get_path("data/csv")
+txt_location = get_path("data/txt")
 
 
 # Loads data from /data/ to the variable "data".
@@ -25,11 +26,11 @@ for sheet in csvs:
 for txt in txts:
 	data[txt[:-4]] = open(txt_location + "/" + txt).read().rstrip()
 
-env = Environment(loader=FileSystemLoader('templates'), trim_blocks=True, lstrip_blocks=True)
+env = Environment(loader=FileSystemLoader(get_path("templates")), trim_blocks=True, lstrip_blocks=True)
 
 def generate_template(template_name, is_tumblr, destination):
 	generated = env.get_template(template_name).render(tumblr=is_tumblr, **data)
-	with open(destination, "w") as to_write:
+	with open(get_path(destination), "w") as to_write:
 		to_write.write(generated.encode("utf-8"))
 
 for template in env.list_templates():
