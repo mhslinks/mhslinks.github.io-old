@@ -3,7 +3,7 @@ Compass,https://mhs.vic.jdlf.com.au,1-1,green,
 MHS Connect,http://connect.mhs.vic.edu.au/,1-1,green,
 MHS Portal,http://domain.mhs.vic.edu.au/,1-1,green,
 ,,,,
-"The Bulletin, Extras and Sports News have been removed as they have not been updated since last year.",TEXT,,,
+"The Bulletin, Extras, Sports News and Calendar have been removed as they have not been updated since last year.<br>Please refer to Compass for these resources.",TEXT,,,
 Student Bulletin,http://resources.mhs.vic.edu.au/bulletin/bulletin.pdf,1-1,blue,removed
 Extras,http://resources.mhs.vic.edu.au/extras/extras.PDF,1-2,blue,removed
 Changes,http://resources.mhs.vic.edu.au/extras/changes.PDF,1-2,blue,removed
@@ -15,8 +15,8 @@ Faculties,faculties,1-2,lightblue,
 ,,,,
 Certificate,http://www.localnetwork.zone/noauth/cacert,1-2,darkblue,
 Web Quota,https://auth.localnetwork.zone:60091/statspopup,1-2,darkblue,
-Mail,https://webmail.netspace.net.au/,1-2,blue,
-Calendar,http://goo.gl/GNof8T,1-2,blue,
+Webmail,https://webmail.netspace.net.au/,1-1,blue,
+Calendar,http://goo.gl/GNof8T,1-2,blue,removed
 ,,,,
 IT Issues/Suggestions,http://goo.gl/5ezQtQ,1-1,orange,midbutton
 2015 IT On-boarding Guide,http://media.wix.com/ugd/c76c88_d398c15d0f8f4da0a1f59b72f2107d6b.pdf,1-1,orange,midbutton
