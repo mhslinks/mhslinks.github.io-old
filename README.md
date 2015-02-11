@@ -9,9 +9,9 @@ MHS Links is generated using a Python script using the [Jinja2](http://jinja.poc
 Live sites
 ========
 
-* http://mhslinks.tumblr.com/ (generated to `/generated/tumblr/`) **The tumblr site will be deprecated soon** due to the difficulty in keeping it updated.
-* http://mc.powered.technology/mhslinks/ (generated to `/generated/standalone/`)
-* http://mcpower.github.io/mhslinks/ (using the same HTML as the above)
+* http://mhslinks.github.io/ (using the same HTML as the above)
+
+In the past, this was running on Tumblr, then mc.powered.technology, then mcpower.github.io. However, supporting so many sites was tedious and confusing for users. Everything has then moved to this repo here.
 
 
 Generating the HTML
@@ -24,11 +24,6 @@ Prerequisites:
 If you wish to install Jinja2 on your system, I would personally recommend you use `pip` ([installation instructions](https://pip.pypa.io/en/latest/installing.html)) to install. Run `pip install jinja2` and you should be set.
 
 After all the prerequisites have been met, simply run `python generate.py` and the pages will be generated to `/generated/`.
-
-Tumblr
-========
-
-If you wish to configure a Tumblr version of this site, there is some configuration needed for it to work. Documentation of this is currently a work in progress.
 
 
 Contributing

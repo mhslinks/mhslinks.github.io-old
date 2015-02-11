@@ -27,8 +27,8 @@ for txt in txts:
 
 env = Environment(loader=FileSystemLoader(get_path("templates")), trim_blocks=True, lstrip_blocks=True)
 
-def generate_template(template_name, is_tumblr, destination):
-	generated = env.get_template(template_name).render(tumblr=is_tumblr, **data)
+def generate_template(template_name, destination):
+	generated = env.get_template(template_name).render(**data)
 	destination = get_path(destination)
 	dirname = os.path.dirname(destination)
 	if not os.path.exists(dirname):
@@ -37,10 +37,6 @@ def generate_template(template_name, is_tumblr, destination):
 		to_write.write(generated.encode("utf-8"))
 
 for template in env.list_templates():
-	# always generate a tumblr template for everything
-	print "generating Tumblr", template
-	generate_template(template, True, "generated/tumblr/{0}".format(template))
-
 	# generating standalone pages
 	if template == "base.html":
 		# no need to generate a template for standalone
@@ -48,6 +44,6 @@ for template in env.list_templates():
 	print "generating standalone", template
 	# if it's the index, generate it in the top directory.
 	if template == "index.html":
-		generate_template(template, False, "generated/standalone/index.html")
+		generate_template(template, "generated/index.html")
 	else:
-		generate_template(template, False, "generated/standalone/{0}/index.html".format(template[:-5]))
+		generate_template(template, "generated/{0}/index.html".format(template[:-5]))
