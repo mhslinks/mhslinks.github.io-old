@@ -31,4 +31,4 @@ Contributing
 
 **PLEASE NOTE** that the emails are automatically sorted alphabetically by the template so there is no need to manually sort it in the CSV.
 
-Anyone can feel free to contribute to MHS Links, whether it be the addition of new links or new emails. Please send a pull request and I will update both live sites.
+Anyone can feel free to contribute to MHS Links, whether it be the addition of new links or new emails. Please send a pull request or make an issue and I will update the site.
