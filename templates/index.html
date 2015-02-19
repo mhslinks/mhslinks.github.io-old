@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block body %}
 <div class="inner links-body fade-in fade-two">
-	<div class="pure-g">
-		{% for link in links %}
+	{% for linktype, classes in [(links, ""), (smalllinks, " midbutton")] %}
+	<div class="pure-g{{ classes }}">
+		{% for link in linktype %}
 		{% if link.url == "TEXT" %}
 		<div class="pure-u-1-1 pure-u-md-1-1">{{ link.name }}</div>
 		{% elif link.name %}
@@ -12,5 +13,6 @@
 		{% endif %}
 		{% endfor %}
 	</div>
+	{% endfor %}
 </div>
 {% endblock %}
