@@ -2,7 +2,7 @@
 {% block title %}Emails{% endblock %}
 {% block body %}
 <div class="inner emails-body fade-in fade-two">
-	<div><a class="pure-button button-xlarge button-red" href="{% if not tumblr %}..{% endif %}/"> &larr; back</a></div>
+	<div><a class="pure-button button-xlarge button-red" href="../"> &larr; back</a></div>
 	<h1>Staff Edumail Email Addresses</h1>
 	{% for update in emailupdates %}
 	<div><strong>{{ update.date|e }}</strong>: {{ update.message|e }}</div>
@@ -13,7 +13,7 @@
 	<br>
 	<div class="small">
 		{% for email in emails|sort(attribute="local") %}
-		<div><a href="mailto:{{ email.local }}@edumail.vic.gov.au">{{ email.local }}<span class="email">@edumail.vic.gov.au</span></a>{% if email.notes %} {{ email.notes|e }}{% endif %}</div>
+		<div><a href="mailto:{{ email.local }}@edumail.vic.gov.au">{{ email.local }}<span class="email">@edumail.vic.gov.au</span></a>{{ " " + email.notes|e if email.notes }}</div>
 		{% endfor %}
 	</div>
 </div>
