@@ -36,10 +36,11 @@ def generate_template(template_name, destination):
 		os.makedirs(dirname)
 	with open(destination, "w") as to_write:
 		to_write.write(generated.encode("utf-8"))
+print "deleting old generated files"
+shutil.rmtree(get_path("generated/"), True) # this seems dangerous!
 
-print "copying CSS"
-shutil.rmtree(get_path("generated/css/"), True) # this seems dangerous!
-shutil.copytree(get_path("css/"), get_path("generated/css/"))
+print "copying static files"
+shutil.copytree(get_path("static/"), get_path("generated/static/"))
 for template in env.list_templates():
 	# generating standalone pages
 	if template == "base.html":
