@@ -104,6 +104,8 @@ body
 #floater>div
 {
 	display: inline-block;
+	float: right;
+	clear: right;
 	font-size: 60%;
 	margin: 1px;
 	padding: 4px;
