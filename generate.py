@@ -2,6 +2,7 @@ import csv
 from jinja2 import Environment, FileSystemLoader
 import os
 import os.path
+import shutil
 get_path = lambda x: os.path.join(os.path.dirname(__file__), x)
 csv_location = get_path("data/csv")
 txt_location = get_path("data/txt")
@@ -36,6 +37,9 @@ def generate_template(template_name, destination):
 	with open(destination, "w") as to_write:
 		to_write.write(generated.encode("utf-8"))
 
+print "copying CSS"
+shutil.rmtree(get_path("generated/css/"), True) # this seems dangerous!
+shutil.copytree(get_path("css/"), get_path("generated/css/"))
 for template in env.list_templates():
 	# generating standalone pages
 	if template == "base.html":
