@@ -233,11 +233,14 @@ a:focus>.email
 	display: none;
 }
 
-.midbutton
+.narrow-grid
 {
 	width: 70%;
-	margin-left: 15%;
-	margin-right: 15%;
+	margin: auto;
+}
+
+.small-grid
+{
 	font-size: 70%;
 }
 
@@ -246,10 +249,8 @@ a:focus>.email
 	.links-body {
 		width: 196px; /* 70% */
 	}
-	.midbutton
+	.narrow-grid
 	{
 		width: 100%;
-		margin-left: 0%;
-		margin-right: 0%;
 	}
 }

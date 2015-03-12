@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
 <div class="inner links-body fade-in fade-two">
-	{% for linktype, classes in [(links, ""), (smalllinks, "midbutton")] %}
+	{% for linktype, classes in [(links, ""), (smalllinks, "small-grid"), (narrowlinks, "narrow-grid small-grid")] %}
 	<div class="pure-g{{ " " + classes if classes }}">
 		{% for link in linktype %}
 		{% if link.url == "TEXT" %}
