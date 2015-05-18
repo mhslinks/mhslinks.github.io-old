@@ -3,7 +3,7 @@ MHS Links
 
 A collection of links (and more) for Melbourne High School. Currently contains various links to useful websites, as well as a collection of staff Edumail email links.
 
-MHS Links is generated using a Python script using the [Jinja2](http://jinja.pocoo.org/) templating system using data from `/data/`. Extending the website is as simple as adding a new row to a CSV.
+MHS Links is generated using a Python script using the [Jinja2](http://jinja.pocoo.org/) templating system using data from `/data/`. Most of the data comes from `.csv` files found in `/data/csv/`.
 
 
 Live sites
@@ -29,6 +29,6 @@ After all the prerequisites have been met, simply run `python generate.py` and t
 Contributing
 ========
 
-**PLEASE NOTE** that the emails are automatically sorted alphabetically by the template so there is no need to manually sort it in the CSV.
+Anyone can feel free to contribute to MHS Links, whether it be the addition of new links or new emails. Note that the emails are automatically sorted, so there is no need to manually sort it in the CSV.
 
-Anyone can feel free to contribute to MHS Links, whether it be the addition of new links or new emails. Please send a pull request or make an issue and I will update the site.
+For most people, the easiest way is to privately message me over a medium such as Facebook. If you know the ropes of `git` and GitHub, please send a pull request or make an issue.
