@@ -1,4 +1,6 @@
-MHS Links
+PLEASE NOTE: This version of MHS Links is now deprecated for the newer [MHS Links](https://github.com/mhslinks/mhslinks.github.io) generated using Jekyll. Please submit pull requests to that repo, not this one.
+
+MHS Links (old)
 ========
 
 A collection of links (and more) for Melbourne High School. Currently contains various links to useful websites, as well as a collection of staff Edumail email links.
